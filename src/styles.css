@@ -1,0 +1,121 @@
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 60px;
+  color: #ff7043;
+}
+h2 {
+  text-align: center;
+}
+
+span {
+  display: inline;
+  max-width: 50px;
+}
+
+.container {
+  width: 850px;
+  margin-top: 80px;
+  color: #ff7043;
+}
+
+.outside {
+  border-color: #ff3366;
+  border-width: 5px;
+}
+
+.search {
+  display: block;
+  position: relative;
+  left: 260px;
+}
+
+.search-bar {
+  border-color: #ff7043;
+}
+
+.current-emoji {
+  font-size: 50px;
+}
+
+.current-temp {
+  display: block;
+  position: relative;
+  top: 12px;
+  left: 15px;
+  font-size: 25px;
+}
+
+.data {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  left: 230px;
+  margin-bottom: 30px;
+  color: #ff7043;
+}
+
+.day-data {
+  text-align: center;
+  border-color: #ff7043;
+  border-width: 5px;
+}
+
+.weekday {
+  font-size: 30px;
+}
+
+.icon {
+  font-size: 50px;
+  margin-top: 10px;
+}
+
+.daily-temps {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.high {
+  font-weight: bolder;
+}
+
+.day-1 {
+  position: relative;
+  left: 20px;
+}
+
+.day-2 {
+  position: relative;
+  left: 45px;
+}
+
+.day-3 {
+  position: relative;
+  left: 60px;
+}
+
+.day-4 {
+  position: relative;
+  left: 85px;
+}
+
+.day-5 {
+  position: relative;
+  left: 110px;
+}
+
+#temp-now {
+  font-size: 40px;
+}
+
+#current {
+  display: block;
+  position: relative;
+  left: 630px;
+  top: -38px;
+  background-color: #f3a871;
+  padding: 7px 12px;
+  border-radius: 4px;
+  box-shadow: none;
+  border: none;
+}
