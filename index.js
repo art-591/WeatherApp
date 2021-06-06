@@ -68,8 +68,8 @@ searchCity.addEventListener("submit", citySearch);
 
 let currentLocation = document.querySelector("#current");
 currentLocation.addEventListener("click", currentPosition);
-
-alert("");
+debugger;
+alert("hello");
 //function celsiusTemp(event) {
 //event.preventDefault();
 //let temperature = document.querySelector("#temp-now");
