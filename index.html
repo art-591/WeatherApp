@@ -24,96 +24,112 @@
         <div class="card-body">
           <form class="search" id="search-engine">
             <div class="row">
-              <div class="col-4 search-bar">
+              <div class="col-6 search-bar">
                 <input
                   type="text"
                   class="form-control"
-                  placeholder="City Search"
+                  placeholder="Search City"
                   id="city-input"
                 />
               </div>
-              <div class="col-1">
+              <div class="col-2">
                 <button type="submit" class="btn btn-warning">Search</button>
+              </div>
+              <div class="col-2">
+                <button id="current" class="btn btn-warning">Current</button>
               </div>
             </div>
           </form>
-          <button id="current">Current</button>
-          <h1 id="city-weather">Paris</h1>
-          <h2 id="current-time"></h2>
           <div class="data">
             <div class="row">
-              <div class="col-2 current-emoji">☀️</div>
-              <div class="col-2 current-temp">
-                <span id="temp-now"> 17° </span>
-                <br />
-                <a href="" id="celsius"> <strong> C</strong> </a>
-                |
-                <a href="" id="farenheit"> F </a>
+              <div class="col-8">
+                <h1 id="city-weather" class="current-city"></h1>
+                <div id="current-time" class="current-time property"></div>
               </div>
-              <div class="col-3">
-                Precipitation: 2% Humidity: 70% Wind: 3 km/h
+
+              <div class="col-1">
+                <img src="" class="current-emoji" />
+              </div>
+              <div class="col-3 current-temp">
+                <div id="temp-now"></div>
               </div>
             </div>
           </div>
+
+          <div class="weather">
+            <div class="row no-gutters">
+              <div class="col">
+                <div>Humidity: <span class="humidity property"></span></div>
+              </div>
+              <div class="col">
+                <div>Wind: <span class="wind property"></span></div>
+              </div>
+
+              <div class="col-3">
+                <div class="sky property"></div>
+              </div>
+              <div class="col-2">
+                <div class="units">
+                  <a href="" id="celsius">C</a>
+                  |
+                  <a href="" id="farenheit"> F </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="row">
-            <div class="col-2">
-              <div class="card day-data day-1">
-                <div class="weekday">Sun</div>
-                <i class="fas fa-cloud-sun icon"></i>
-                <div class="daily-temps">
-                  <span class="high">13° </span>
-                  <span class="low">4°</span>
-                </div>
+            <div class="col">
+              <div class="weekday">Sun</div>
+              <i class="fas fa-cloud-sun icon"></i>
+              <div class="daily-temps">
+                <span class="high">13° </span>
+                <span class="low">4°</span>
               </div>
             </div>
-            <div class="col-2">
-              <div class="card day-data day-2">
-                <div class="weekday">Mon</div>
-                <i class="fas fa-cloud-sun-rain icon"></i>
-                <div class="daily-temps">
-                  <span class="high">18°</span>
-                  <span class="low">10°</span>
-                </div>
+            <div class="col">
+              <div class="weekday">Mon</div>
+              <i class="fas fa-cloud-sun-rain icon"></i>
+              <div class="daily-temps">
+                <span class="high">18°</span>
+                <span class="low">10°</span>
               </div>
             </div>
-            <div class="col-2">
-              <div class="card day-data day-3">
-                <div class="weekday">Tues</div>
-                <i class="fas fa-cloud-rain icon"></i>
-                <div class="daily-temps">
-                  <span class="high">17° </span>
-                  <span class="low">6°</span>
-                </div>
+            <div class="col">
+              <div class="weekday">Tues</div>
+              <i class="fas fa-cloud-rain icon"></i>
+              <div class="daily-temps">
+                <span class="high">17° </span>
+                <span class="low">6°</span>
               </div>
             </div>
-            <div class="col-2">
-              <div class="card day-data day-4">
-                <div class="weekday">Wed</div>
-                <i class="fas fa-cloud-rain icon"></i>
-                <div class="daily-temps">
-                  <span class="high">14° </span>
-                  <span class="low">7°</span>
-                </div>
+            <div class="col">
+              <div class="weekday">Wed</div>
+              <i class="fas fa-cloud-rain icon"></i>
+              <div class="daily-temps">
+                <span class="high">14° </span>
+                <span class="low">7°</span>
               </div>
             </div>
-            <div class="col-2">
-              <div class="card day-data day-5">
-                <div class="weekday">Thurs</div>
-                <i class="fas fa-cloud-rain icon"></i>
-                <div class="daily-temps">
-                  <span class="high">13° </span>
-                  <span class="low">8°</span>
-                </div>
+            <div class="col">
+              <div class="weekday">Thurs</div>
+              <i class="fas fa-cloud-rain icon"></i>
+              <div class="daily-temps">
+                <span class="high">13° </span>
+                <span class="low">8°</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <span class="coder">
-        Coded by Anel Sanders. This is open-source on
-        <a href="https://github.com/art-591/WeatherApp">Git Hub</a>, and it is
-        hosted on <a href="https://www.netlify.com/" target="blank">Netlify</a>.
-      </span>
+      <div class="coder">
+        Coded by Anel Sanders.
+        <a href="https://github.com/art-591/WeatherApp"
+          >Open Sourced on GitHub.</a
+        >
+        <a href="https://www.netlify.com/" target="blank"> Hosted on Netlify</a
+        >.
+      </div>
     </div>
 
     <script src="index.js"></script>

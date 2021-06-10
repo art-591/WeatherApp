@@ -17,30 +17,35 @@ function currentTime(data) {
   if (minute < 10) {
     minute = `0${minute}`;
   }
-  let time = document.querySelector("h2");
+  let time = document.querySelector("#current-time");
   time.innerHTML = `${weekday} ${hour}:${minute}`;
 }
 
 function getWeatherData(response) {
   console.log(response.data);
-  let temperature = response.data.main.temp;
   let temp = document.querySelector("#temp-now");
-  temperature = Math.round(temperature);
-  console.log(temperature);
-  temp.innerHTML = `${temperature}°`;
-  let city = response.data.name;
+  temp.innerHTML = `${Math.round(response.data.main.temp)}°`;
   let cityName = document.querySelector("h1");
-  cityName.innerHTML = `${city}`;
+  cityName.innerHTML = response.data.name;
+  let skies = document.querySelector(".sky");
+  skies.innerHTML = response.data.weather[0].description;
+  let humidity = document.querySelector(".humidity");
+  humidity.innerHTML = `${response.data.main.humidity}%`;
+  let wind = document.querySelector(".wind");
+  wind.innerHTML = `${Math.round(response.data.wind.speed)} km/hr`;
+  let icon = document.querySelector(".current-emoji");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function citySearch(event) {
   event.preventDefault();
+  let apiBase = "https://api.openweathermap.org/data/2.5/weather?";
   let city = document.querySelector("#city-input");
   city = city.value;
-  //let cityName = document.querySelector("h1");
-  //cityName.innerHTML = `${city}`;
   let apiKey = "1f6bf5f6e1d5da325c16280778c22717";
-  let apiBase = "https://api.openweathermap.org/data/2.5/weather?";
   let units = "metric";
   let apiUrl = `${apiBase}q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(getWeatherData);
@@ -68,29 +73,3 @@ searchCity.addEventListener("submit", citySearch);
 
 let currentLocation = document.querySelector("#current");
 currentLocation.addEventListener("click", currentPosition);
-
-//function celsiusTemp(event) {
-//event.preventDefault();
-//let temperature = document.querySelector("#temp-now");
-//temperature.innerHTML = `17°`;
-//let celsius = document.querySelector("#celsius");
-//celsius.innerHTML = `<strong> C </strong>`;
-//let farenheit = document.querySelector("#farenheit");
-//farenheit.innerHTML = `F`;
-//}
-
-//function farenheitTemp(event) {
-//event.preventDefault();
-//let temperature = document.querySelector("#temp-now");
-//temperature.innerHTML = `62°`;
-//let farenheit = document.querySelector("#farenheit");
-//farenheit.innerHTML = `<strong> F </strong>`;
-//let celsius = document.querySelector("#celsius");
-//celsius.innerHTML = `C`;
-//}
-
-//let degreesF = document.querySelector("#farenheit");
-//degreesF.addEventListener("click", farenheitTemp);
-
-//let degreesC = document.querySelector("#celsius");
-//degreesC.addEventListener("click", celsiusTemp);

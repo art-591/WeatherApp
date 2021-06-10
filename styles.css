@@ -1,125 +1,99 @@
-h1 {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 60px;
-  color: #ff7043;
-}
-h2 {
-  text-align: center;
-}
-
-span {
-  display: inline;
-  max-width: 50px;
-}
-
 .container {
-  width: 850px;
   margin-top: 80px;
+  color: #ff7043;
+  width: 650px;
+}
+
+.current-city {
+  margin-top: 30px;
+  margin-bottom: 0;
+  font-size: 50px;
   color: #ff7043;
 }
 
 .outside {
-  border-color: #ff3366;
-  border-width: 5px;
-}
-
-.search {
-  display: block;
-  position: relative;
-  left: 260px;
-}
-
-.search-bar {
-  border-color: #ff7043;
+  border: none;
 }
 
 .current-emoji {
+  font-size: 200;
+  margin-top: 10px;
+  position: relative;
+  right: 60px;
+  top: 15px;
+}
+
+.current-temp #temp-now {
   font-size: 50px;
+  margin-top: 35px;
+  text-align: center;
 }
 
 .current-temp {
-  display: block;
   position: relative;
-  top: 12px;
-  left: 15px;
-  font-size: 25px;
+  left: 25px;
+}
+
+.units {
+  text-align: center;
+}
+
+.property {
+  color: black;
 }
 
 .data {
-  display: block;
-  position: relative;
-  margin: 0 auto;
-  left: 230px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   color: #ff7043;
+}
+
+.weather {
+  margin: 20px 0 20px 0;
+}
+
+.weather .col {
+  padding: 0;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .day-data {
   text-align: center;
   border-color: #ff7043;
   border-width: 5px;
+  width: 125px;
 }
 
 .weekday {
   font-size: 30px;
+  text-align: center;
 }
 
 .icon {
   font-size: 50px;
-  margin-top: 10px;
+  position: relative;
+  left: 20px;
+  margin: 10px;
 }
 
 .daily-temps {
   font-size: 20px;
   margin-top: 10px;
+  text-align: center;
 }
 
 .high {
   font-weight: bolder;
 }
 
-.day-1 {
-  position: relative;
-  left: 20px;
-}
-
-.day-2 {
-  position: relative;
-  left: 45px;
-}
-
-.day-3 {
-  position: relative;
-  left: 60px;
-}
-
-.day-4 {
-  position: relative;
-  left: 85px;
-}
-
-.day-5 {
-  position: relative;
-  left: 110px;
-}
-
 #temp-now {
   font-size: 40px;
 }
 
-#current {
-  display: block;
-  position: relative;
-  left: 630px;
-  top: -38px;
-  background-color: #f3a871;
-  padding: 7px 12px;
-  border-radius: 4px;
-  box-shadow: none;
-  border: none;
-}
-
 .coder {
+  margin-top: 20px;
   text-align: center;
 }
