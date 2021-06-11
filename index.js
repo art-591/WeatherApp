@@ -24,7 +24,9 @@ function currentTime(data) {
 function getWeatherData(response) {
   console.log(response.data);
   let temp = document.querySelector("#temp-now");
-  temp.innerHTML = `${Math.round(response.data.main.temp)}°`;
+  tempNow = Math.round(response.data.main.temp);
+  console.log(tempNow);
+  temp.innerHTML = `${tempNow}°`;
   let cityName = document.querySelector("h1");
   cityName.innerHTML = response.data.name;
   let skies = document.querySelector(".sky");
@@ -66,6 +68,26 @@ function currentPosition() {
   navigator.geolocation.getCurrentPosition(currentCoordinates);
 }
 
+function farenheitTemp(event) {
+  event.preventDefault();
+  let temp = document.querySelector("#temp-now");
+  let tempFarenheit = (tempNow * 9) / 5 + 32;
+  console.log(tempFarenheit);
+  temp.innerHTML = `${tempFarenheit}°`;
+  celsius.classList.remove("active");
+  farenheit.classList.add("active");
+}
+
+function celsiusTemp(event) {
+  event.preventDefault();
+  let temp = document.querySelector("#temp-now");
+  temp.innerHTML = `${tempNow}°`;
+  farenheit.classList.remove("active");
+  celsius.classList.add("active");
+}
+
+let tempNow = null;
+
 currentTime(new Date());
 
 let searchCity = document.querySelector("#search-engine");
@@ -73,3 +95,9 @@ searchCity.addEventListener("submit", citySearch);
 
 let currentLocation = document.querySelector("#current");
 currentLocation.addEventListener("click", currentPosition);
+
+let farenheit = document.querySelector("#farenheit");
+farenheit.addEventListener("click", farenheitTemp);
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", celsiusTemp);

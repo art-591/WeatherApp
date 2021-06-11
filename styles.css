@@ -16,16 +16,15 @@
 }
 
 .current-emoji {
-  font-size: 200;
-  margin-top: 10px;
+  width: 125px;
+  margin-top: 5px;
   position: relative;
   right: 45px;
-  top: 10px;
 }
 
 .current-temp #temp-now {
   font-size: 50px;
-  margin-top: 30px;
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -36,14 +35,12 @@
 
 .units {
   text-align: center;
+  position: relative;
+  bottom: 5px;
 }
 
 .property {
   color: black;
-}
-
-.sky {
-  text-align: center;
 }
 
 .data {
@@ -52,7 +49,7 @@
 }
 
 .weather {
-  margin: 20px 0 20px 0;
+  margin-bottom: 20px;
 }
 
 .weather .col {
@@ -100,4 +97,14 @@
 .coder {
   margin-top: 20px;
   text-align: center;
+}
+
+.units .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.units .active:hover {
+  text-decoration: none;
 }
