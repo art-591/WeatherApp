@@ -43,6 +43,12 @@
   color: black;
 }
 
+.sky {
+  text-align: center;
+  position: relative;
+  right: 25px;
+}
+
 .data {
   margin-bottom: 10px;
   color: #ff7043;
