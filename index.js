@@ -21,8 +21,45 @@ function currentTime(data) {
   time.innerHTML = `${weekday} ${hour}:${minute}`;
 }
 
-function getWeatherData(response) {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
+function getForecastData(response) {
   console.log(response.data);
+
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let timestamp = formatDay(response.data.daily[0].dt);
+  let icon = response.data.daily[0].weather[0].icon;
+  forecastHTML = `<div class="col-2">
+  <div class="weekday">${timestamp}</div>
+  <img
+          src="http://openweathermap.org/img/wn/${icon}@2x.png"
+          alt=""
+          class="icon"
+        />
+  <div class="daily-temps">
+  <span class="high">${Math.round(response.data.daily[0].temp.max)}°</span>
+  <span class="low">${Math.round(response.data.daily[0].temp.min)}°</span>
+  </div>
+  </div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecastUrl(coordinates) {
+  let lat = coordinates.lat;
+  let lon = coordinates.lon;
+  let apiKey = "1f6bf5f6e1d5da325c16280778c22717";
+  let urlBase = `https://api.openweathermap.org/data/2.5/onecall?`;
+  let apiUrl = `${urlBase}lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(getForecastData);
+}
+
+function getWeatherData(response) {
   let temp = document.querySelector("#temp-now");
   tempNow = Math.round(response.data.main.temp);
   console.log(tempNow);
@@ -40,6 +77,8 @@ function getWeatherData(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  let coords = response.data.coord;
+  getForecastUrl(coords);
 }
 
 function citySearch(event) {
@@ -51,7 +90,6 @@ function citySearch(event) {
   let units = "metric";
   let apiUrl = `${apiBase}q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(getWeatherData);
-  console.log(apiUrl);
 }
 
 function currentCoordinates(position) {
@@ -68,24 +106,6 @@ function currentPosition() {
   navigator.geolocation.getCurrentPosition(currentCoordinates);
 }
 
-function farenheitTemp(event) {
-  event.preventDefault();
-  let temp = document.querySelector("#temp-now");
-  let tempFarenheit = (tempNow * 9) / 5 + 32;
-  console.log(tempFarenheit);
-  temp.innerHTML = `${tempFarenheit}°`;
-  celsius.classList.remove("active");
-  farenheit.classList.add("active");
-}
-
-function celsiusTemp(event) {
-  event.preventDefault();
-  let temp = document.querySelector("#temp-now");
-  temp.innerHTML = `${tempNow}°`;
-  farenheit.classList.remove("active");
-  celsius.classList.add("active");
-}
-
 let tempNow = null;
 
 currentTime(new Date());
@@ -95,9 +115,3 @@ searchCity.addEventListener("submit", citySearch);
 
 let currentLocation = document.querySelector("#current");
 currentLocation.addEventListener("click", currentPosition);
-
-let farenheit = document.querySelector("#farenheit");
-farenheit.addEventListener("click", farenheitTemp);
-
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", celsiusTemp);

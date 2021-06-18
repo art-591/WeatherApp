@@ -2,6 +2,7 @@
   margin-top: 80px;
   color: #ff7043;
   width: 650px;
+  box-shadow: gray;
 }
 
 .current-city {
@@ -43,12 +44,6 @@
   color: black;
 }
 
-.sky {
-  text-align: center;
-  position: relative;
-  right: 25px;
-}
-
 .data {
   margin-bottom: 10px;
   color: #ff7043;
@@ -56,10 +51,6 @@
 
 .weather {
   margin-bottom: 20px;
-}
-
-.weather .col {
-  padding: 0;
 }
 
 .no-gutters {
@@ -81,9 +72,7 @@
 
 .icon {
   font-size: 50px;
-  position: relative;
-  left: 20px;
-  margin: 10px;
+  margin: 0 auto;
 }
 
 .daily-temps {
@@ -103,14 +92,4 @@
 .coder {
   margin-top: 20px;
   text-align: center;
-}
-
-.units .active {
-  color: black;
-  cursor: default;
-  text-decoration: none;
-}
-
-.units .active:hover {
-  text-decoration: none;
 }

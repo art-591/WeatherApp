@@ -45,6 +45,7 @@
               <div class="col-8">
                 <h1 id="city-weather" class="current-city">...</h1>
                 <div id="current-time" class="current-time property"></div>
+                <div class="sky"></div>
               </div>
 
               <div class="col-1">
@@ -52,72 +53,21 @@
               </div>
               <div class="col-3 current-temp">
                 <div id="temp-now">...</div>
-                <div class="units">
-                  <a href="" id="celsius" class="active">C</a>
-                  |
-                  <a href="" id="farenheit"> F </a>
-                </div>
+                <div class="units">C</div>
               </div>
             </div>
           </div>
 
           <div class="weather">
-            <div class="row no-gutters">
-              <div class="col">
-                <div>Humidity: <span class="humidity property"></span></div>
-              </div>
-              <div class="col">
-                <div>Wind: <span class="wind property"></span></div>
-              </div>
-
-              <div class="col-5">
-                <div class="sky property"></div>
+                Humidity: 
+                <span class="humidity property"></span>
+                , Wind: 
+                <span class="wind property"></span>
+                
               </div>
             </div>
           </div>
-
-          <div class="row">
-            <div class="col">
-              <div class="weekday">Sun</div>
-              <i class="fas fa-cloud-sun icon"></i>
-              <div class="daily-temps">
-                <span class="high">13° </span>
-                <span class="low">4°</span>
-              </div>
-            </div>
-            <div class="col">
-              <div class="weekday">Mon</div>
-              <i class="fas fa-cloud-sun-rain icon"></i>
-              <div class="daily-temps">
-                <span class="high">18°</span>
-                <span class="low">10°</span>
-              </div>
-            </div>
-            <div class="col">
-              <div class="weekday">Tues</div>
-              <i class="fas fa-cloud-rain icon"></i>
-              <div class="daily-temps">
-                <span class="high">17° </span>
-                <span class="low">6°</span>
-              </div>
-            </div>
-            <div class="col">
-              <div class="weekday">Wed</div>
-              <i class="fas fa-cloud-rain icon"></i>
-              <div class="daily-temps">
-                <span class="high">14° </span>
-                <span class="low">7°</span>
-              </div>
-            </div>
-            <div class="col">
-              <div class="weekday">Thurs</div>
-              <i class="fas fa-cloud-rain icon"></i>
-              <div class="daily-temps">
-                <span class="high">13° </span>
-                <span class="low">8°</span>
-              </div>
-            </div>
-          </div>
+          <div id="forecast"></div>
         </div>
       </div>
       <div class="coder">
