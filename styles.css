@@ -1,30 +1,36 @@
+body {
+  background: linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113));
+}
+
 .container {
   margin-top: 80px;
-  color: #ff7043;
-  width: 650px;
-  box-shadow: gray;
+  width: 675px;
 }
 
 .current-city {
   margin-top: 30px;
   margin-bottom: 0;
   font-size: 50px;
-  color: #ff7043;
+  color: #d83c65;
 }
 
 .outside {
   border: none;
+
+  padding: 40px;
 }
 
 .current-emoji {
   width: 200px;
   margin-top: 5px;
   position: relative;
-  right: 65px;
+  right: 80px;
 }
 
 .current-temp {
-  text-align: center;
+  text-align: right;
+  margin-top: 20px;
+  color: #d83c65;
 }
 
 .current-temp #temp-now {
@@ -41,15 +47,17 @@
 
 .sky {
   text-transform: capitalize;
+  color: #d83c65;
 }
 
 .property {
   color: black;
+  opacity: 50%;
 }
 
 .data {
   margin-bottom: 10px;
-  color: #ff7043;
+  color: #d83c65;
 }
 
 .weather {
@@ -61,38 +69,37 @@
   margin-left: 0;
 }
 
-.day-data {
+.forecast {
   text-align: center;
-  border-color: #ff7043;
-  border-width: 5px;
-  width: 125px;
+  margin-top: -50px;
 }
 
 .weekday {
-  font-size: 30px;
+  font-size: 25px;
   text-align: center;
+  color: #d83c65;
 }
 
 .icon {
-  font-size: 50px;
-  margin: 0 auto;
+  width: 75px;
+  margin: -12px auto;
 }
 
 .daily-temps {
-  font-size: 20px;
+  font-size: 15px;
   margin-top: 10px;
   text-align: center;
+  color: black;
+  opacity: 50%;
 }
 
 .high {
   font-weight: bolder;
 }
 
-#temp-now {
-  font-size: 40px;
-}
-
 .coder {
-  margin-top: 20px;
+  margin-top: 5px;
   text-align: center;
+  margin-bottom: 80px;
+  color: white;
 }
