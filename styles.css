@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113));
+  background: linear-gradient(90deg, rgb(255, 95, 109), rgb(247, 212, 99));
 }
 
 .container {
@@ -11,7 +11,7 @@ body {
   margin-top: 30px;
   margin-bottom: 0;
   font-size: 50px;
-  color: #d83c65;
+  color: rgb(255, 95, 109);
 }
 
 .outside {
@@ -21,16 +21,17 @@ body {
 }
 
 .current-emoji {
-  width: 200px;
+  width: 175px;
   margin-top: 5px;
   position: relative;
-  right: 80px;
+  right: 75px;
+  filter: hue-rotate(336deg);
 }
 
 .current-temp {
   text-align: right;
   margin-top: 20px;
-  color: #d83c65;
+  color: rgb(255, 95, 109);
 }
 
 .current-temp #temp-now {
@@ -47,7 +48,7 @@ body {
 
 .sky {
   text-transform: capitalize;
-  color: #d83c65;
+  color: rgb(255, 95, 109);
 }
 
 .property {
@@ -57,7 +58,7 @@ body {
 
 .data {
   margin-bottom: 10px;
-  color: #d83c65;
+  color: rgb(255, 95, 109);
 }
 
 .weather {
@@ -71,18 +72,18 @@ body {
 
 .forecast {
   text-align: center;
-  margin-top: -50px;
 }
 
 .weekday {
   font-size: 25px;
   text-align: center;
-  color: #d83c65;
+  color: rgb(255, 95, 109);
 }
 
 .icon {
   width: 75px;
   margin: -12px auto;
+  filter: hue-rotate(336deg);
 }
 
 .daily-temps {
