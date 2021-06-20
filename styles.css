@@ -17,10 +17,14 @@
 }
 
 .current-emoji {
-  width: 125px;
+  width: 200px;
   margin-top: 5px;
   position: relative;
-  right: 45px;
+  right: 65px;
+}
+
+.current-temp {
+  text-align: center;
 }
 
 .current-temp #temp-now {
@@ -31,6 +35,12 @@
 .units {
   font-size: 20px;
   vertical-align: top;
+  position: relative;
+  top: 12px;
+}
+
+.sky {
+  text-transform: capitalize;
 }
 
 .property {

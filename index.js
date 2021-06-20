@@ -65,14 +65,15 @@ function getForecastUrl(coordinates) {
   let lon = coordinates.lon;
   let apiKey = "1f6bf5f6e1d5da325c16280778c22717";
   let urlBase = `https://api.openweathermap.org/data/2.5/onecall?`;
-  let apiUrl = `${urlBase}lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  let units = "imperial";
+  let apiUrl = `${urlBase}lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(getForecastData);
+  console.log(apiUrl);
 }
 
 function getWeatherData(response) {
   let temp = document.querySelector("#temp-now");
   tempNow = Math.round(response.data.main.temp);
-  console.log(tempNow);
   temp.innerHTML = `${tempNow}`;
   let cityName = document.querySelector("h1");
   cityName.innerHTML = response.data.name;
@@ -81,7 +82,7 @@ function getWeatherData(response) {
   let humidity = document.querySelector(".humidity");
   humidity.innerHTML = `${response.data.main.humidity}%`;
   let wind = document.querySelector(".wind");
-  wind.innerHTML = `${Math.round(response.data.wind.speed)} km/hr`;
+  wind.innerHTML = `${Math.round(response.data.wind.speed)} miles/hr`;
   let icon = document.querySelector(".current-emoji");
   icon.setAttribute(
     "src",
@@ -97,7 +98,7 @@ function citySearch(event) {
   let city = document.querySelector("#city-input");
   city = city.value;
   let apiKey = "1f6bf5f6e1d5da325c16280778c22717";
-  let units = "metric";
+  let units = "imperial";
   let apiUrl = `${apiBase}q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(getWeatherData);
 }
@@ -106,7 +107,7 @@ function currentCoordinates(position) {
   let urlBase = "https://api.openweathermap.org/data/2.5/weather?";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-  let units = "metric";
+  let units = "imperial";
   let apiKey = "1f6bf5f6e1d5da325c16280778c22717";
   let apiUrl = `${urlBase}lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(getWeatherData);
