@@ -33,20 +33,30 @@ function getForecastData(response) {
 
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let timestamp = formatDay(response.data.daily[0].dt);
-  let icon = response.data.daily[0].weather[0].icon;
-  forecastHTML = `<div class="col-2">
-  <div class="weekday">${timestamp}</div>
+  let forecast = response.data.daily;
+  forecast.forEach(function (forecastDay, index) {
+    console.log(forecastDay);
+    console.log(index);
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+  <div class="weekday">${formatDay(forecastDay.dt)}</div>
   <img
-          src="http://openweathermap.org/img/wn/${icon}@2x.png"
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
           alt=""
           class="icon"
         />
   <div class="daily-temps">
-  <span class="high">${Math.round(response.data.daily[0].temp.max)}°</span>
-  <span class="low">${Math.round(response.data.daily[0].temp.min)}°</span>
+  <span class="high">${Math.round(forecastDay.temp.max)}°</span>
+  <span class="low">${Math.round(forecastDay.temp.min)}°</span>
   </div>
   </div>`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
@@ -63,7 +73,7 @@ function getWeatherData(response) {
   let temp = document.querySelector("#temp-now");
   tempNow = Math.round(response.data.main.temp);
   console.log(tempNow);
-  temp.innerHTML = `${tempNow}°`;
+  temp.innerHTML = `${tempNow}`;
   let cityName = document.querySelector("h1");
   cityName.innerHTML = response.data.name;
   let skies = document.querySelector(".sky");

@@ -25,19 +25,12 @@
 
 .current-temp #temp-now {
   font-size: 50px;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.current-temp {
-  position: relative;
-  left: 25px;
+  vertical-align: top;
 }
 
 .units {
-  text-align: center;
-  position: relative;
-  bottom: 5px;
+  font-size: 20px;
+  vertical-align: top;
 }
 
 .property {
